@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Cotizar envío | Tienda Nopal</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<!-- Icons in the style of SF Symbols: 24 x 24, stroke 1.5, round caps; colored by currentColor. -->
+<svg xmlns="http://www.w3.org/2000/svg" hidden>
+  <symbol id="i-compose" viewBox="0 0 24 24"><path d="M11 4.5H6.5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V13"/><path d="M17.6 3.9a1.9 1.9 0 0 1 2.7 2.7L12 14.9l-3.4.9.9-3.4z"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 18.5v-13M6.5 11 12 5.5l5.5 5.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.5"/><path d="m20.5 15.5-4.5-4.5-7.5 8"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9.5 6 6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5.5 12.5 4 4 9-9"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 4.6 3.2 17a2 2 0 0 0 1.7 3h14.2a2 2 0 0 0 1.7-3L13.7 4.6a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4M12 16.8v.2"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M13.5 4.5h6v6M19.5 4.5l-8 8"/><path d="M17.5 14v3.5a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2H10"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2"/><path d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
+  <symbol id="i-xmark" viewBox="0 0 24 24"><path d="m6.5 6.5 11 11M17.5 6.5l-11 11"/></symbol>
+  <symbol id="i-spinner" viewBox="0 0 24 24"><path d="M12 3.5v3.5" opacity="1"/><path d="m18 6-2.5 2.5" opacity=".88"/><path d="M20.5 12H17" opacity=".76"/><path d="m18 18-2.5-2.5" opacity=".64"/><path d="M12 20.5V17" opacity=".52"/><path d="m6 18 2.5-2.5" opacity=".4"/><path d="M3.5 12H7" opacity=".3"/><path d="m6 6 2.5 2.5" opacity=".2"/></symbol>
+</svg>
+
+<a class="skip" href="#composer-input">Ir al cuadro de mensaje</a>
+<div class="shell">
+  <aside class="sidebar" id="sidebar" aria-label="Mis cotizaciones">
+    <div class="sidebar-head">
+      <div>
+        <p class="brand-name">Tienda Nopal</p>
+        <p class="brand-product">Envíos</p>
+      </div>
+      <button type="button" class="icon-button" id="newQuote" aria-label="Nueva cotización" title="Nueva cotización"><svg class="icon" aria-hidden="true"><use href="#i-compose"/></svg></button>
+    </div>
+    <nav class="history" id="history" aria-label="Cotizaciones pasadas"></nav>
+    <section class="memories" id="memories" aria-labelledby="memTitle" hidden>
+      <div class="memories-head">
+        <h2 id="memTitle">Memorias</h2>
+        <button type="button" class="icon-button" id="memAdd" aria-label="Agregar memoria" title="Agregar memoria"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
+      </div>
+      <div class="mem-list" id="memList"></div>
+    </section>
+    <p class="replay" id="replayNote" hidden>Modo réplica: los precios vienen de una cotización grabada; no se consultan los sitios.</p>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <div class="main" id="main">
+    <header class="topbar">
+      <button type="button" class="icon-button mobile-only" id="menuBtn" aria-controls="sidebar" aria-expanded="false" aria-label="Mis cotizaciones"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></button>
+      <h1 id="threadTitle" tabindex="-1">Nueva cotización</h1>
+      <button type="button" class="icon-button mobile-only" id="newQuoteTop" aria-label="Nueva cotización"><svg class="icon" aria-hidden="true"><use href="#i-compose"/></svg></button>
+    </header>
+
+    <main class="thread" id="thread" tabindex="-1">
+      <section class="empty" id="empty" aria-labelledby="emptyTitle">
+        <h2 id="emptyTitle">¿Qué vas a enviar?</h2>
+        <p>Escribe los códigos postales de origen y destino, el peso y las medidas de la caja.</p>
+        <div class="suggestions" id="suggestions"></div>
+      </section>
+      <div class="items" id="items"></div>
+    </main>
+
+    <div class="composer-wrap">
+      <div class="readonly" id="readonly" hidden>
+        <p>Los precios pudieron cambiar desde entonces.</p>
+        <button type="button" class="button" id="again">Cotizar de nuevo</button>
+      </div>
+      <ul class="mention-list" id="mentionList" role="listbox" aria-label="Memorias" hidden></ul>
+      <form class="composer" id="composer">
+        <label class="visually-hidden" for="composer-input">Mensaje</label>
+        <textarea id="composer-input" rows="1" autocomplete="off" aria-autocomplete="list" aria-controls="mentionList" aria-describedby="composerHint" placeholder="Ej.: 2 cajas de 3 kg, 30 x 20 x 15 cm, de 64000 a 44100"></textarea>
+        <button type="submit" class="send" id="send" aria-label="Enviar" disabled><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+      </form>
+      <p class="visually-hidden" id="composerHint">Escribe # para usar una memoria.</p>
+      <p class="visually-hidden" id="mentionStatus" aria-live="polite"></p>
+      <div class="composer-tools">
+        <div class="segmented" id="priority" role="radiogroup" aria-label="Prioridad de la cotización" hidden></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
+  <div class="sheet-head">
+    <div>
+      <h2 id="sheetTitle"></h2>
+      <p id="sheetSub"></p>
+      <p id="sheetTerms" hidden></p>
+    </div>
+    <button type="button" class="icon-button" id="sheetClose" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-xmark"/></svg></button>
+  </div>
+  <div class="sheet-body"><img id="sheetImg" alt=""></div>
+</dialog>
+<dialog class="sheet sheet-form" id="memSheet" aria-labelledby="memSheetTitle">
+  <form id="memForm" novalidate>
+    <div class="sheet-head">
+      <div>
+        <h2 id="memSheetTitle">Nueva memoria</h2>
+        <p id="memSlug"></p>
+      </div>
+      <button type="button" class="icon-button" id="memClose" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-xmark"/></svg></button>
+    </div>
+    <div class="sheet-body form-body">
+      <label class="field"><span>Tipo</span>
+        <select id="memKind" name="kind">
+          <option value="tienda">Tienda (origen)</option>
+          <option value="caja">Caja</option>
+          <option value="destino">Destino</option>
+        </select>
+      </label>
+      <label class="field"><span>Nombre</span>
+        <input id="memName" name="name" autocomplete="off" maxlength="40" aria-describedby="err-name">
+        <small class="field-error" id="err-name"></small>
+      </label>
+      <label class="field" data-kinds="tienda destino"><span>Código postal</span>
+        <input id="memZip" name="zip" inputmode="numeric" maxlength="5" autocomplete="off" aria-describedby="err-zip">
+        <small class="field-error" id="err-zip"></small>
+      </label>
+      <label class="field" data-kinds="tienda"><span>Envías como</span>
+        <select id="memCustomer" name="customerType" aria-describedby="err-customerType">
+          <option value="">Sin indicar</option>
+          <option value="individual">Persona física</option>
+          <option value="business">Persona moral</option>
+        </select>
+        <small class="field-help">El tipo de entrega y la fecha no se guardan: cambian en cada envío.</small>
+        <small class="field-error" id="err-customerType"></small>
+      </label>
+      <fieldset class="field" data-kinds="caja">
+        <legend>Medidas en cm</legend>
+        <div class="field-row">
+          <label><span>Largo</span><input id="memLength" name="lengthCm" inputmode="decimal" autocomplete="off" aria-describedby="err-lengthCm"></label>
+          <label><span>Ancho</span><input id="memWidth" name="widthCm" inputmode="decimal" autocomplete="off" aria-describedby="err-widthCm"></label>
+          <label><span>Alto</span><input id="memHeight" name="heightCm" inputmode="decimal" autocomplete="off" aria-describedby="err-heightCm"></label>
+        </div>
+        <small class="field-error" id="err-lengthCm"></small>
+        <small class="field-error" id="err-widthCm"></small>
+        <small class="field-error" id="err-heightCm"></small>
+      </fieldset>
+      <label class="field" data-kinds="caja"><span>Peso típico en kg (opcional)</span>
+        <input id="memWeight" name="weightKg" inputmode="decimal" autocomplete="off" aria-describedby="err-weightKg">
+        <small class="field-error" id="err-weightKg"></small>
+      </label>
+      <p class="form-note" id="memNote" aria-live="polite"></p>
+      <p class="form-error" id="memError" role="alert"></p>
+    </div>
+    <div class="sheet-foot">
+      <button type="button" class="plain-button destructive" id="memDelete" hidden>Borrar</button>
+      <span class="sheet-foot-space"></span>
+      <button type="button" class="plain-button" id="memCancel">Cancelar</button>
+      <button type="submit" class="button" id="memSave">Guardar</button>
+    </div>
+  </form>
+</dialog>
+<script src="/app.js"></script>
+</body>
+</html>

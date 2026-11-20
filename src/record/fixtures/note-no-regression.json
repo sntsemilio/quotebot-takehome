@@ -1,0 +1,74 @@
+{
+  "case7-qotf.jsonl": {
+    "digest": "Order: by price, the app's default. The user did not choose a priority: never say they chose one.\nCarriers:\n- Estafeta: quoted. Estafeta nos dio 4 precios, copiados de su página.\n- FedEx México: quoted. FedEx México nos dio 6 precios, copiados de su página.\n- DHL México: blocked. La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio.\n  agent's account (not the site's words): \"the site refused the connection (ERR_HTTP2_PROTOCOL_ERROR), typical of anti-bot protection\"\nOptions in ranking order (prices are in the app's table):\n1. FedEx México – FedEx Nacional Económico: arrives 2026-11-27 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n2. FedEx México – FedEx Nacional Económico: arrives 2026-11-26 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n3. Estafeta – Terrestre: 3-5 business days per Estafeta's published service terms, site notes: \"Cotización Aproximada\" \"Los precios incluyen I.V.A.\"\n4. FedEx México – FedEx Nacional Día Siguiente: arrives 2026-11-23 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n5. FedEx México – FedEx Nacional 10:30 a.m.: arrives 2026-11-23 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n6. FedEx México – FedEx Nacional Día Siguiente: arrives 2026-11-20 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n7. FedEx México – FedEx Nacional 10:30 a.m.: arrives 2026-11-20 per the site, site notes: \"Los montos se muestran en MXN\" \"Las tarifas que se muestran aquí pueden ser diferentes de los cargos reales de su envío.\"\n8. Estafeta – Dia Sig.: delivery 1 day(s) per the site, site notes: \"Cotización Aproximada\" \"Los precios incluyen I.V.A.\"\n9. Estafeta – 2 Dias: delivery 2 day(s) per the site, site notes: \"Cotización Aproximada\" \"Los precios incluyen I.V.A.\"\n10. Estafeta – 12:30: next business day before 12:30 per Estafeta's published service terms, site notes: \"Cotización Aproximada\" \"Los precios incluyen I.V.A.\"\nPostal code 64000 (origin) as shown by the sites: \"CP 64000 MONTERREY, NUEVO LEON\"\nPostal code 22000 (destination) as shown by the sites: \"CP 22000 TIJUANA, BAJA CALIFORNIA\"",
+    "fallbackNote": "La primera opción de la tabla es FedEx México – FedEx Nacional Económico. La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio.",
+    "carriers": [
+      {
+        "carrierId": "estafeta",
+        "status": "quoted",
+        "label": "Cotizada",
+        "message": "Estafeta nos dio 4 precios, copiados de su página."
+      },
+      {
+        "carrierId": "fedex",
+        "status": "quoted",
+        "label": "Cotizada",
+        "message": "FedEx México nos dio 6 precios, copiados de su página."
+      },
+      {
+        "carrierId": "redpack",
+        "status": "needs_human",
+        "label": "Necesita un dato",
+        "message": "Faltan 2 datos: entrega a domicilio o en sucursal y persona física o moral. Si nos lo dices en el chat, cotizamos Redpack aparte."
+      },
+      {
+        "carrierId": "dhl",
+        "status": "blocked",
+        "label": "Bloqueada",
+        "message": "La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio."
+      },
+      {
+        "carrierId": "ups",
+        "status": "needs_human",
+        "label": "Necesita un dato",
+        "message": "Falta la fecha de envío. Si nos lo dices en el chat, cotizamos UPS México aparte."
+      }
+    ]
+  },
+  "case9-ntk3.jsonl": {
+    "digest": "Order: by price, the app's default. The user did not choose a priority: never say they chose one.\nCarriers:\n- Estafeta: failed. La página de Estafeta falló o no respondió como esperábamos. No tenemos precio de Estafeta. Su página dice: \"Ocurrio un error inesperado en la ejecucion del WS.\".\n  agent's account (not the site's words): \"After submitting origin 99999, destination 06000, package 1 kg 30x20x15 cm, the quote iframe showed a generic web-service error and no services or prices. The site did not explicitly say which postal code was rejected; origin 99999 may not be a valid Mexican postal code.\"\n- FedEx México: needs_human. FedEx México no pudo terminar con los datos que le dimos.\n  agent's account (not the site's words): \"FedEx does not accept origin postal code 99999. The address autocomplete gave no valid Mexican area for it. Picking '99999 Zac., México' sent the form to manual entry with the origin postal code empty. I typed 99999 in 'Código postal de origen', but CONTINUAR stayed disabled. The destination (06000) was accepted. No rates were shown. A valid origin postal code is needed.\"\n- DHL México: blocked. La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio.\n  agent's account (not the site's words): \"the site refused the connection (ERR_HTTP2_PROTOCOL_ERROR), typical of anti-bot protection\"\nOptions in ranking order (prices are in the app's table):\n- none",
+    "fallbackNote": "No conseguimos ningún precio en esta cotización. La página de Estafeta falló o no respondió como esperábamos. No tenemos precio de Estafeta. Su página dice: \"Ocurrio un error inesperado en la ejecucion del WS.\". FedEx México no pudo terminar con los datos que le dimos. La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio.",
+    "carriers": [
+      {
+        "carrierId": "estafeta",
+        "status": "failed",
+        "label": "Falló",
+        "message": "La página de Estafeta falló o no respondió como esperábamos. No tenemos precio de Estafeta. Su página dice: \"Ocurrio un error inesperado en la ejecucion del WS.\"."
+      },
+      {
+        "carrierId": "fedex",
+        "status": "needs_human",
+        "label": "No terminó",
+        "message": "FedEx México no pudo terminar con los datos que le dimos."
+      },
+      {
+        "carrierId": "redpack",
+        "status": "needs_human",
+        "label": "Necesita un dato",
+        "message": "Faltan 2 datos: entrega a domicilio o en sucursal y persona física o moral. Si nos lo dices en el chat, cotizamos Redpack aparte."
+      },
+      {
+        "carrierId": "dhl",
+        "status": "blocked",
+        "label": "Bloqueada",
+        "message": "La página de DHL México no dejó consultar de forma automática (protección contra robots). Puedes cotizar directo en su sitio."
+      },
+      {
+        "carrierId": "ups",
+        "status": "needs_human",
+        "label": "Necesita un dato",
+        "message": "Falta la fecha de envío. Si nos lo dices en el chat, cotizamos UPS México aparte."
+      }
+    ]
+  }
+}

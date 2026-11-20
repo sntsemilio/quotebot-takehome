@@ -1,0 +1,6 @@
+{
+  "originZip": "64000",
+  "destZip": "22000",
+  "parcels": [{ "weightKg": 10, "lengthCm": 40, "widthCm": 30, "heightCm": 30 }],
+  "extras": { "shipDate": "$NEXT_BUSINESS_DAY", "deliveryType": "home", "customerType": "individual" }
+}

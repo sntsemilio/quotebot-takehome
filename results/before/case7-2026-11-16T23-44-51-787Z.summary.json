@@ -1,0 +1,22 @@
+{
+  "runId": "case7-2026-11-16T23-44-51-787Z",
+  "label": "before",
+  "caseId": 7,
+  "message": "Cuánto me cobran por 40 kg de 64000 a 22000? son 4 cajas iguales de 10 kg, 40x30x30 cada una",
+  "expect": "Quote 4 parcels of 10 kg each (volumetric about 7.2 kg each), not one 40 kg parcel. Total is shown, and how it was computed.",
+  "status": "completed",
+  "answer": "No pude sacar el precio del cotizador de Estafeta. Llené el formulario (64000 → 22000, 10 kg, 40×30×30 cm) y le di a cotizar, pero la página que recibí se corta antes de mostrar el resultado y no aparece ningún precio. No te voy a dar una cifra inventada, porque si reservas con ella podrías llevarte una sorpresa en el costo real.\n\n**Lo que sí está claro:**\n- **Peso a cobrar:** 10 kg por caja. El peso por tamaño de cada caja (7.2 a 9 kg, según la paquetería) es menor que el peso real, así que cobran por el real.\n- **Cómo se manda:** normalmente serían 4 guías de 10 kg, una por caja, y el total sería 4 veces el precio de una.\n- **Ruta:** de Monterrey a Tijuana, que suele estar entre las más caras del país por la distancia.\n- **Alternativa por los 40 kg:** pide también precio de carga consolidada (LTL). A veces sale más barato que 4 guías de paquetería.\n\n**Para darte un precio real, dime:**\n1. ¿Quieres seguro? Si sí, ¿cuánto vale la mercancía?\n2. ¿Qué contiene y es frágil?\n\nCon eso vuelvo a intentar en Estafeta y también reviso DHL, FedEx y Redpack para comparar. Si lo necesitas ya, puedes cotizar directo en estafeta.com/cotizar-envio con 10 kg y 40×30×30 cm, y multiplicar el resultado por 4.",
+  "steps": 7,
+  "toolCalls": 12,
+  "toolErrorsHiddenFromModel": 9,
+  "inputTokens": 120919,
+  "outputTokens": 1753,
+  "cacheWriteTokens": 0,
+  "cacheReadTokens": 0,
+  "costUsd": 0.5187,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "unpricedModels": [],
+  "durationMs": 73989
+}

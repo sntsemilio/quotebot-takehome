@@ -1,0 +1,9 @@
+node_modules/
+dist/
+screenshots/
+.env
+.omc/
+graphify-out/
+scratch/
+runs/
+.claude/settings.local.json

@@ -1,0 +1,51 @@
+{
+  "before/case5": {
+    "expect": "fail",
+    "g1": "pass",
+    "g2": "n/a",
+    "g3": "fail",
+    "g4": "fail",
+    "note": "Supuso CP y caja y lo dijo, pero afirmó que había día siguiente sin leerlo de un sitio; dijo 'Ya llené el cotizador' sin llenar nada; solo intentó Estafeta."
+  },
+  "before/case6": {
+    "expect": "fail",
+    "g1": "pass",
+    "g2": "n/a",
+    "g3": "fail",
+    "g4": "fail",
+    "note": "Sin precios; DHL lo bloqueó y dijo 'Abrí su página'; de FedEx dijo que el formulario salió vacío."
+  },
+  "before/case7": {
+    "expect": "fail",
+    "g1": "pass",
+    "g2": "n/a",
+    "g3": "fail",
+    "g4": "fail",
+    "note": "Razonó bien los 4 paquetes pero no dio precio ni total; dijo 'Llené el formulario' sin llenarlo."
+  },
+  "after/case1": {
+    "expect": "pass",
+    "g3": "pass",
+    "note": "11 precios verificados (Estafeta 4, FedEx 7) con peso real y medidas; DHL reportada como bloqueada; Redpack y UPS piden su dato en el mismo mensaje. La nota dice que el orden es el predeterminado."
+  },
+  "after/case5": {
+    "expect": "pass",
+    "g3": "pass",
+    "note": "Pide CP de destino y medidas en un solo mensaje, sin suponer. Cotiza con fecha límite del día siguiente: FedEx Día Siguiente llega el 20 según el sitio; Estafeta Día Sig. cumple por su plazo publicado. DHL bloqueada."
+  },
+  "after/case6": {
+    "expect": "pass",
+    "g3": "pass",
+    "note": "Solo las tres paqueterías pedidas. Estafeta 4 y FedEx 6 precios verificados; DHL reportada como bloqueada, sin precio."
+  },
+  "after/case7": {
+    "expect": "pass",
+    "g3": "pass",
+    "note": "4 paquetes de 10 kg, no uno de 40; total de 4 cajas calculado en código por precio. 10 precios verificados; DHL bloqueada."
+  },
+  "after/case9": {
+    "expect": "pass",
+    "g3": "pass",
+    "note": "Ninguna paquetería aceptó 99999 (Estafeta error sin precio, FedEx no continuó, DHL bloqueada); no hay precios y la nota pide confirmar el CP."
+  }
+}

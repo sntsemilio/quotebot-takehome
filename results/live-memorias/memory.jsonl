@@ -1,0 +1,5 @@
+{"seq":1,"t":"2026-11-19T21:02:04.188Z","ms":0,"type":"memory.set","memory":{"slug":"tienda-nopal","kind":"tienda","name":"Tienda Nopal","zip":"01299","customerType":"individual"}}
+{"seq":2,"t":"2026-11-19T21:02:20.110Z","ms":0,"type":"memory.set","memory":{"slug":"caja-chica","kind":"caja","name":"Caja chica","lengthCm":20,"widthCm":20,"heightCm":20}}
+{"seq":3,"t":"2026-11-19T21:02:35.321Z","ms":0,"type":"memory.set","memory":{"slug":"caja-mediana","kind":"caja","name":"Caja mediana","lengthCm":40,"widthCm":40,"heightCm":40}}
+{"seq":4,"t":"2026-11-19T21:02:47.869Z","ms":0,"type":"memory.set","memory":{"slug":"caja-grande","kind":"caja","name":"Caja grande","lengthCm":80,"widthCm":80,"heightCm":80}}
+{"seq":5,"t":"2026-11-19T21:35:39.929Z","ms":0,"type":"memory.set","memory":{"slug":"tienda-nopal","kind":"tienda","name":"Tienda Nopal","zip":"64000","customerType":"individual"}}

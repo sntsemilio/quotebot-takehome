@@ -1,0 +1,22 @@
+{
+  "runId": "case5-2026-11-16T23-36-02-227Z",
+  "label": "before",
+  "caseId": 5,
+  "message": "La necesito mañana mismo en Puebla. Sale de CDMX 03100, pesa 1 kg, caja de zapatos",
+  "expect": "Destination postal code and box size are missing: ask for them, or state the assumption clearly. Only next-day services count as meeting the request; say so if none are available.",
+  "status": "completed",
+  "answer": "Ya llené el cotizador de Estafeta, pero no pude confirmar un precio. Revisé lo que regresó la página y la tabla de tarifas no aparece, ni siquiera como error. No sé si el sitio no respondió o si cambió el formulario. No te voy a dar una cifra inventada como si fuera la cotización real.\n\n**Lo que puse en el formulario:**\n- Origen: CP 03100 (CDMX)\n- Destino: CP 72000 (centro de Puebla). Es un código genérico porque no me diste uno exacto.\n- Peso: 1 kg\n- Medidas: 33 × 20 × 12 cm. Son medidas comunes de caja de zapatos, no las tuyas.\n- Servicio: no elegí ninguno en particular.\n\n**Ojo con el peso:** con esas medidas, el peso por volumen sale entre 1.6 y 2 kg, según la fórmula de cada paquetería. Probablemente te cobren por 2 kg aunque la caja pese 1 kg.\n\n**Sobre la entrega mañana:** entre CDMX y Puebla normalmente sí hay servicio de día siguiente, como el \"Día Siguiente\" de Estafeta. Casi siempre hay que entregar el paquete antes de cierta hora, a veces desde el mediodía según la sucursal. Si lo vas a mandar hoy, confírmalo cuanto antes.\n\n**Para darte un precio real, necesito:**\n1. El código postal exacto en Puebla.\n2. Las medidas reales de la caja, si son distintas.\n\nCon eso vuelvo a intentar en Estafeta y también cotizo con DHL y FedEx, que tienen entrega al día siguiente en esa ruta, para que puedas comparar. Si tienes prisa, puedes cotizar directo en estafeta.com/cotizar-envio o en la sucursal.",
+  "steps": 8,
+  "toolCalls": 12,
+  "toolErrorsHiddenFromModel": 9,
+  "inputTokens": 124163,
+  "outputTokens": 1837,
+  "cacheWriteTokens": 0,
+  "cacheReadTokens": 0,
+  "costUsd": 0.5334,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "unpricedModels": [],
+  "durationMs": 74017
+}

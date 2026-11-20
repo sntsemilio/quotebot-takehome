@@ -1,0 +1,22 @@
+{
+  "runId": "case6-2026-11-16T23-43-11-392Z",
+  "label": "before",
+  "caseId": 6,
+  "message": "Envío de 3 kg de 44100 a 97000, compárame Estafeta, DHL y FedEx por favor",
+  "expect": "Quote from the named carriers. Any carrier that blocks, times out or fails is reported as such, never priced.",
+  "status": "completed",
+  "answer": "No tengo todavía ningún precio confirmado de Estafeta, DHL ni FedEx para tu envío de 3 kg de 44100 (Guadalajara) a 97000 (Mérida). Prefiero no darte un número inventado, porque si luego en mostrador te cobran otra cosa, te afecta a ti. 📦\n\n**Lo que pasó:**\n1. **Estafeta:** Abrí su cotizador y llené los códigos postales (44100 → 97000), elegí \"Paquete\", puse 3 kg y le di a \"Cotizar\". Pero no pude ver la respuesta: lo que leí de la página se corta antes de la zona de resultados. No sé si salió un precio o un error por faltar las medidas.\n2. **FedEx:** Su cotizador no cargó. La página abrió, pero el formulario salió vacío.\n3. **DHL:** Abrí su página, pero no llegué a llenar el formulario.\n\n**Además me faltan las medidas de la caja (largo × ancho × alto en cm).** Las paqueterías cobran por el peso real o por el peso volumétrico, el que sea mayor. Por ejemplo, una caja de 40×30×30 cm cuenta como 7.2 kg (40×30×30 ÷ 5000), aunque pese 3 kg, y el precio cambia bastante.\n\nSi me pasas las medidas, vuelvo a cotizar con las tres. Si alguna página sigue fallando, te lo digo tal cual. 🚚\n\nMientras tanto, en estos sitios puedes cotizar tú mismo:\n- Estafeta: estafeta.com/cotizar-envio\n- DHL: dhl.com/mx-es/home/envio/cotizacion-envio.html\n- FedEx: fedex.com/es-mx/online/rating.html\n\n¿Qué medidas tiene la caja?",
+  "steps": 10,
+  "toolCalls": 14,
+  "toolErrorsHiddenFromModel": 7,
+  "inputTokens": 675867,
+  "outputTokens": 2196,
+  "cacheWriteTokens": 0,
+  "cacheReadTokens": 0,
+  "costUsd": 2.7474,
+  "models": [
+    "claude-opus-5-5"
+  ],
+  "unpricedModels": [],
+  "durationMs": 97241
+}
